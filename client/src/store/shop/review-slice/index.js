@@ -7,24 +7,25 @@ const initialState = {
 };
 
 export const addReview = createAsyncThunk(
-  "/order/addReview",
-  async (formdata) => {
+  "/review/addReview",
+  async (reviewData) => {
     const response = await axios.post(
-      `http://localhost:5000/api/shop/review/add`,
-      formdata
+      `${import.meta.env.VITE_API_BASE_URL}/shop/review/add`,
+      reviewData
     );
-
     return response.data;
   }
 );
 
-export const getReviews = createAsyncThunk("/order/getReviews", async (id) => {
-  const response = await axios.get(
-    `http://localhost:5000/api/shop/review/${id}`
-  );
-
-  return response.data;
-});
+export const getReviews = createAsyncThunk(
+  "/review/getReviews",
+  async (productId) => {
+    const response = await axios.get(
+      `${import.meta.env.VITE_API_BASE_URL}/shop/review/${productId}`
+    );
+    return response.data;
+  }
+);
 
 const reviewSlice = createSlice({
   name: "reviewSlice",
