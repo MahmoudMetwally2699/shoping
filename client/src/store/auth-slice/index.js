@@ -12,7 +12,7 @@ export const registerUser = createAsyncThunk(
 
   async (formData) => {
     const response = await axios.post(
-      "https://shoping-zeta-gold.vercel.app",
+      "https://shoping-zeta-gold.vercel.app/api",
       formData,
       {
         withCredentials: true,
@@ -28,7 +28,7 @@ export const loginUser = createAsyncThunk(
 
   async (formData) => {
     const response = await axios.post(
-      "https://shoping-zeta-gold.vercel.app",
+      "https://shoping-zeta-gold.vercel.app/api",
       formData,
       {
         withCredentials: true,
@@ -44,7 +44,7 @@ export const logoutUser = createAsyncThunk(
 
   async () => {
     const response = await axios.post(
-      "https://shoping-zeta-gold.vercel.app",
+      "https://shoping-zeta-gold.vercel.app/api",
       {},
       {
         withCredentials: true,
