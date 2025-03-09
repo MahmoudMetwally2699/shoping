@@ -29,7 +29,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://shoping-zeta-gold.vercel.app"],
+    origin: ["http://localhost:5173", "https://shoping-zeta-gold.vercel.app/api"],
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
