@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+require('dotenv').config();
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const authRouter = require("./routes/auth/auth-routes");
@@ -19,8 +20,8 @@ const commonFeatureRouter = require("./routes/common/feature-routes");
 //create a separate file for this and then import/use that file here
 
 mongoose
-  .connect("db_url")
-  .then(() => console.log("MongoDB connected"))
+  .connect(process.env.MONGODB_URI)
+  .then(() => console.log("MongoDB connected to shops database"))
   .catch((error) => console.log(error));
 
 const app = express();
